@@ -1,0 +1,50 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'mainpage/style.css' %}">
+<body>
+    <h1 class="header">Ramstein Cadet Squadron</h1>
+    <div class="container">
+        <div class="Main card">
+            <h2>Who are we?</h2>
+            <p>We are the ramstein cadet squadron, the largest civil air patrol squadron overseas. We are composed of over 50 members, more than 30 of which are cadets. We maintain a high level of commitment to the core values, and try to teach the next generation of leaders to do the same.</p>
+        </div>
+        <div class="Meetings card">
+            <h2>Upcoming Meetings</h2>
+            <ul>
+                {%for meeting in meetings%}
+                    <li>
+                        <p>{{ meeting.meeting_date}};{{meeting.week_goal}}</p>
+                    </li>
+                {%empty%}
+                    <li>No meetings yet :/</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="Events card">
+            <h2>Upcoming Events</h2>
+            <ul>
+                {%for event in events%}
+                    <li>
+                        <p>{{ event.event_date}};{{event.event_title}}</p>
+                    </li>
+                {%empty%}
+                    <li>No events happening soon...</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="Promotions card">
+            <h2>Recent Promotions</h2>
+            <ul>
+                {%for name in names%}
+                    <li>
+                        <p>{{ name.name}};{{name.achievment}}</p>
+                    </li>
+                {%empty%}
+                    <li>Go get promoting!!</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="Photo card">
+        </div>
+        <div class="Footer">
+        </div>
+</body>

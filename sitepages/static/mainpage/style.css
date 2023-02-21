@@ -1,0 +1,74 @@
+:root{
+  --navy:#00165a;
+  --blue:#000080;
+  --red:#800000;
+  --maroon:#5a0000;
+  --gold:#808000;
+  --grey:#ebf1f4;
+}
+body {
+  margin:0px;
+  background-color:var(--grey);
+}
+.header{
+  text-align:center;
+  background:var(--navy);
+  margin:0px;
+  padding:10px;
+  border-radius:0px 0px 50% 50%;
+  color:white;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 1fr 60px;
+  gap: 1em 1em;
+  grid-auto-flow: row;
+  grid-template-areas:
+      "Main Main Meetings"
+      "Photo Photo Events"
+      "Photo Photo Promotions"
+      "Footer Footer Footer";
+}
+
+.Main {
+  grid-area: Main;
+}
+
+.Meetings {
+  grid-area: Meetings;
+}
+
+.Events {
+  grid-area: Events;
+}
+
+.Promotions {
+  grid-area: Promotions;
+}
+.Photo {
+  grid-area: Photo;
+  background-image: url("https://www.gocivilairpatrol.com/media/photoalbums/67190384_2450135768383102_536700487_A2E9342E843CE.jpg");
+  background-position: center;
+  background-size: cover;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 0px;
+}
+.Footer {
+  grid-area: Footer;
+  background-color: var(--navy);
+}
+.Links {
+  display: flex;
+  width: 33vw;
+  list-style-type: none;
+}
+
+.card{
+  margin:20px;
+  border-radius:4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding:1vw;
+  background-color: white;
+}
